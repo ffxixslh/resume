@@ -1,9 +1,9 @@
 ---
 import JsonEditor from 'src/components/manipulate/JsonEditor'
 import Layout from 'src/layouts/Layout.astro'
-import { metaData } from '../../../meta.config'
+import { loadMetaData } from 'src/loaders/meta.loader'
 
-const json = JSON.stringify(metaData())
+const json = JSON.stringify(loadMetaData())
 ---
 
 <Layout title="Manipulate Page">

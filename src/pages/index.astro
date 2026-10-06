@@ -2,6 +2,9 @@
 import ResumeContainer from 'src/components/ui/ResumeContainer'
 import { SaveAsPdf } from 'src/components/save-as-pdf/save.tsx'
 import Layout from 'src/layouts/Layout.astro'
+import { loadMetaData } from 'src/loaders/meta.loader'
+
+const resumeData = loadMetaData()
 ---
 
 <Layout title="ffxixslh's resume">
@@ -9,7 +12,7 @@ import Layout from 'src/layouts/Layout.astro'
     id="container"
     class="my-0 mx-auto grid min-h-screen justify-items-center px-12 py-6 bg-gray-100"
   >
-    <ResumeContainer client:idle />
+    <ResumeContainer data={resumeData} />
   </div>
   <SaveAsPdf client:visible />
 </Layout>
