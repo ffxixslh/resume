@@ -1,0 +1,14 @@
+---
+import JsonEditor from 'src/components/manipulate/JsonEditor'
+import Layout from 'src/layouts/Layout.astro'
+import { metaData } from '../../../meta.config'
+
+const json = JSON.stringify(metaData())
+---
+
+<Layout title="Manipulate Page">
+  <div class="text-white">
+    <div>Manipulate Page</div>
+    <JsonEditor client:only="solid-js" initJSON={json} />
+  </div>
+</Layout>

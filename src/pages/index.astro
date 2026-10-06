@@ -1,0 +1,36 @@
+---
+import ResumeContainer from 'src/components/ui/ResumeContainer'
+import { SaveAsPdf } from 'src/components/save-as-pdf/save.tsx'
+import Layout from 'src/layouts/Layout.astro'
+---
+
+<Layout title="ffxixslh's resume">
+  <div
+    id="container"
+    class="my-0 mx-auto grid min-h-screen justify-items-center px-12 py-6 bg-gray-100"
+  >
+    <ResumeContainer client:idle />
+  </div>
+  <SaveAsPdf client:visible />
+</Layout>
+
+<style>
+  :root {
+    font-family: 'Inter', sans-serif;
+  }
+  img {
+    box-sizing: border-box;
+  }
+
+  #container {
+    width: min(740px, calc(100vw - 2rem));
+  }
+
+  @media print {
+    #container {
+      width: 740px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+</style>
